@@ -5,5 +5,8 @@ class SecureAccount:
     @property
     def balance(self):
         return self.__balance
+
     def deposit(self, amt):
+        if amt <= 0:
+            raise ValueError("Депозит не может быть меньше 0 ")
         self.__balance += amt
