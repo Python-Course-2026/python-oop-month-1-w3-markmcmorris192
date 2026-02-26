@@ -1,3 +1,6 @@
+from functools import total_ordering
+
+
 class Animal:
     """Класс животного"""
     def __init__(self, species: str, food_per_day: float):
@@ -19,8 +22,18 @@ class ZooInventory:
 
     def calculate_monthly_food(self):
         # ТВОЙ КОД: сумма (food_per_day каждого животного) * 30
-        pass
+        sum_food_per_day = 0
+        for animal in self.animals:
+            sum_food_per_day += animal.food_per_day
+        return sum_food_per_day*30
 
     def count_species(self, species: str):
         # ТВОЙ КОД: подсчет количества объектов с такой породой
-        pass
+        total = 0
+        for animal in self.animals:
+            if species == animal.species:
+                total += 1
+        return total
+
+
+
