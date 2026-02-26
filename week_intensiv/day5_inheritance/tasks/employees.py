@@ -14,9 +14,9 @@ class Developer(Employee):
     3. Переопределить calculate_salary: возвращать base_salary + bonus.
     """
     def __init__(self, name, base_salary, bonus):
-        # ТВОЙ КОД ЗДЕСЬ
-        pass
+        super().__init__(name, base_salary)
+        self.bonus = bonus
 
     def calculate_salary(self):
-        # ТВОЙ КОД ЗДЕСЬ
-        pass
+        total = self.bonus + self.base_salary
+        return total
