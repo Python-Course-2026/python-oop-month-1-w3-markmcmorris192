@@ -13,7 +13,7 @@ def test_best_student_logic():
 def test_grade_book_single_student():
     gb = GradeBook()
     gb.students = {"Solo": [4]}
-    assert gb.get_best_student() == "Solo"
+    assert gb.get_best_student() == "Solo", "Неверно определен лучший студент"
 
 def test_grade_book_empty():
     gb = GradeBook()
