@@ -18,7 +18,6 @@ class Account:
 
 class SavingsAccount(Account):
     """Сберегательный счет: нельзя снимать больше, чем есть (уже в родителе)"""
-    pass
 
 class BusinessAccount(Account):
     """
@@ -44,5 +43,13 @@ class BankPro:
        - Вернуть "Успех".
     """
     def transfer(self, from_acc, to_acc, amount):
-        # ТВОЙ КОД ЗДЕСЬ
-        pass
+        if isinstance(from_acc, BusinessAccount):
+            total = amount * 1.05
+        else:
+            total = amount
+
+        if not from_acc.withdraw(total):
+            return 'Ошибка'
+        to_acc.deposit(amount)
+        return "Успех"
+
