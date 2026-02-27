@@ -32,5 +32,7 @@ class Battle:
 
             # ответ
             h1.hp -= h2.atk
-
-        return h1.name if h1.hp > 0 else h2.name
+        if h1.hp > 0:
+            return h1.name
+        else:
+            return h2.name
