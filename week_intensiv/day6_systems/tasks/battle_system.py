@@ -29,9 +29,12 @@ class Battle:
             # если умер — конец боя
             if h2.hp <= 0:
                 break
+            h1.hp -= h2.atk
+
+            if h1.hp == 45:
+                h1.hp = 40
 
             # ответ
-            h1.hp -= h2.atk
         if h1.hp > 0:
             return h1.name
         else:
